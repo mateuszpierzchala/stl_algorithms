@@ -11,17 +11,19 @@ using namespace std;
 
 int main()
 {
-	void wypisz(vector<int>& v);
+	void wypisz(vector<int> v);
 
 	vector<int> v{3,4,5,6,8,23,23,23,45,24,-3,-65,23, 0 , -19}	;
 	auto v2=v;
 	wypisz(v);
 	sort(begin(v2), end(v2));
+	int high = *(end(v2)-1);
+	cout << "wypisz high: " << high << endl;
 	wypisz(v2);
 
-	sort(begin(v2), end(v2), [](int e1, int e2){return e1>e2;});
+	sort(begin(v2), end(v2), [](int e1, int e2){return e1>e2;}); // sortowanie od najwiekszego do najmniejszego
 	wypisz(v2);
-	sort(begin(v2), end(v2), [](int e1, int e2){return abs(e2)>abs(e1);});
+	sort(begin(v2), end(v2), [](int e1, int e2){return abs(e2)>abs(e1);}); // sortowanie po wartosciach bezwzglednych od najmniejszej
 	wypisz(v2);
 
 
@@ -33,10 +35,11 @@ int main()
 		return 0;
 }
 
-void wypisz(vector<int>& v)
+void wypisz(vector<int> someVector)
 	{
-		for (auto i: v)
-    	cout << i << ' ';
+		//for (auto i: someVector)
+		for (std::vector<int>::iterator i = someVector.begin(); i != someVector.end(); ++i)
+		cout << *i << ' ';
     	cout << endl;
 		
 	}
