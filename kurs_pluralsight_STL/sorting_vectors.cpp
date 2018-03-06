@@ -37,9 +37,10 @@ int main()
 
 void wypisz(vector<int> someVector)
 	{
-		//for (auto i: someVector)
-		for (std::vector<int>::iterator i = someVector.begin(); i != someVector.end(); ++i)
-		cout << *i << ' ';
+		//for (auto i: someVector) -> taka petla operuje na typie zdeklarowanym jako typ elementu vectora
+		for (std::vector<int>::iterator i = someVector.begin(); i != someVector.end(); ++i)  // taka zoperuje na iteratorach
+		cout << *i << ' '; //dla drugiej wersji wskaznik bo wskaznik na iterator pokazuje wartosc elementu 
+							// dla pierwszej wersji bez * bo operuje na type zadeklarowanym
     	cout << endl;
 		
 	}

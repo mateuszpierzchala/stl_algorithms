@@ -10,7 +10,7 @@ using namespace std;
 int main()
 {
 	void wypisz(vector<int> v);
-	vector<int> v{0,4,17,6,8,23,23,23,45,24,-3,-65,23, 8, 23, 0, -19}	;	
+	vector<int> v{0,4,17,6,8,8,23,23,23,45,24,-3,-65,23, 8, 23, 0, -19}	;	
 	string s{"Hello I am a sentence"};
 
 	//find first values
@@ -35,7 +35,7 @@ int main()
 	cout << "rezultat z find_first_of: " << weLookedFor << endl;
 	//search- znajduje sekwencje z drugiego zbioru ktore wystepuja w pierwszym zbiorze
 	// i zwraca adres pierwszego elementu z szukanej sekwencji
-	std::vector<int> subsequence{8,23};
+	std::vector<int> subsequence{23,23,45};
 	result = search(v.begin(), v.end(), subsequence.begin(), subsequence.end());
 	//result++;
 	//result++;
@@ -75,9 +75,9 @@ int main()
 
 void wypisz(vector<int> someVector)
 	{
-		//for (auto i: someVector)
-		for (std::vector<int>::iterator i = someVector.begin(); i != someVector.end(); ++i)
-		cout << *i << ' ';
+		for (auto i: someVector)
+		//for (std::vector<int>::iterator i = someVector.begin(); i != someVector.end(); ++i)
+		cout << i << ' ';
     	cout << endl;
 		
 	}
