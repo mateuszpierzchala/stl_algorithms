@@ -29,15 +29,26 @@ copy_if(source.begin(), source.end(), begin(v5), [](int elem){return elem % 2 ==
 wypisz(v5);
 
 copy_n(begin(v5), 3, begin(v2)); // (poczatek, ilosc elem z kolekcji arg1, cel)
-wypisz()
+wypisz(v2);
 copy(begin(source), position+1, position+1); // arg1 - zrodlo,pocztek zakresu / arg2-koniec zakresu/ arg3-cel
 //copy(begin(s))
-copy_backward(begin(source),end(source)-1, end(source)); // przesuwanie elem w prawo
+wypisz(source);
+copy_backward(begin(source),end(source)-1, end(source)); // przesuwanie elem w prawo // kopiowanie elementow od ostatniego
+wypisz(source);
+
+//remove&erase
+auto newend = remove(source.begin(), source.end(), 3);// remove wywala elementy poczawszy od pozycji podanej w arg3 i zapełnia ją elementami od pozycji 0 az wypelni na nowo kontener
+int newend_val = *newend; // newend to iterator do ostatniego nie usunietego elementu
+cout << newend_val << endl;
+int logicalsize = newend - begin(source);
+cout << logicalsize << endl;
+int s = source.size();
+cout << s << endl;
+//source = v3;
+wypisz(source);
+source.erase(newend, end(source)); //erase usuwa i kurczy kolekcje od arg1 do arg2
 wypisz(source);
 }
-
-
-
 
 void wypisz(vector<int> someVector)
 	{
